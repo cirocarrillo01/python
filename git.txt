@@ -1,0 +1,277 @@
+Aquí tienes un tutorial extenso sobre **Git** y sus comandos más comunes, con explicaciones detalladas de su función y cómo usarlos. Git es un sistema de control de versiones distribuido que permite gestionar cambios en archivos y proyectos a lo largo del tiempo.
+
+---
+
+# **Git Tutorial Completo**
+
+## 1. **Introducción a Git**
+
+Git es un sistema de control de versiones distribuido que te permite hacer un seguimiento de los cambios en tu código, colaborar con otros desarrolladores y gestionar diferentes versiones de tu proyecto. Se utiliza principalmente en el desarrollo de software, pero puede aplicarse a cualquier tipo de proyecto donde se necesite llevar un registro de cambios.
+
+### **Principales ventajas de Git:**
+- **Descentralización:** Cada usuario tiene una copia completa del repositorio.
+- **Rendimiento:** Git es rápido y eficiente en la gestión de grandes proyectos.
+- **Seguridad:** Git tiene mecanismos que garantizan que el historial de cambios sea inmutable.
+
+---
+
+## 2. **Comandos Básicos de Git**
+
+A continuación, explico algunos de los comandos más importantes de Git, su propósito y cómo usarlos.
+
+### **2.1. Configuración Inicial**
+
+Antes de empezar a usar Git en tu sistema, es importante configurarlo.
+
+1. **Configurar tu nombre y correo:**
+   ```bash
+   git config --global user.name "Tu Nombre"
+   git config --global user.email "tu.email@dominio.com"
+   ```
+
+   **Explicación:** Git necesita saber quién está realizando los cambios en el proyecto, por lo que debes configurar tu nombre y correo electrónico.
+
+2. **Ver la configuración de Git:**
+   ```bash
+   git config --list
+   ```
+
+   **Explicación:** Este comando muestra la configuración actual de Git.
+
+---
+
+### **2.2. Inicializar un Repositorio Git**
+
+1. **Crear un repositorio nuevo:**
+   ```bash
+   git init
+   ```
+
+   **Explicación:** Este comando inicializa un nuevo repositorio Git en el directorio actual. Crea una carpeta `.git` donde Git almacenará toda la información del proyecto.
+
+2. **Clonar un repositorio existente:**
+   ```bash
+   git clone <url-del-repositorio>
+   ```
+
+   **Explicación:** Si ya tienes un repositorio remoto (por ejemplo, en GitHub o GitLab), puedes clonarlo en tu máquina local usando este comando. Esto descarga una copia completa del repositorio.
+
+---
+
+### **2.3. Estado del Repositorio**
+
+1. **Ver el estado de los archivos:**
+   ```bash
+   git status
+   ```
+
+   **Explicación:** Este comando te muestra el estado actual de tu repositorio: qué archivos están modificados, añadidos o eliminados, y si tienes cambios pendientes de confirmar.
+
+---
+
+### **2.4. Trabajando con Archivos**
+
+1. **Añadir archivos al área de preparación (staging area):**
+   ```bash
+   git add <archivo>
+   ```
+
+   **Explicación:** El comando `git add` agrega un archivo al área de preparación. Esto le dice a Git que el archivo ha cambiado y está listo para ser confirmado (commit).
+
+2. **Añadir todos los archivos modificados al área de preparación:**
+   ```bash
+   git add .
+   ```
+
+   **Explicación:** Este comando agrega todos los archivos modificados (y nuevos) al área de preparación.
+
+3. **Confirmar los cambios:**
+   ```bash
+   git commit -m "Mensaje del commit"
+   ```
+
+   **Explicación:** Este comando confirma los cambios en el repositorio. El mensaje del commit debe ser claro y describir los cambios realizados.
+
+4. **Deshacer cambios no confirmados:**
+   ```bash
+   git restore <archivo>
+   ```
+
+   **Explicación:** Si has realizado cambios en un archivo pero aún no los has confirmado, puedes restaurarlo a su estado anterior.
+
+---
+
+### **2.5. Visualizando el Historial de Cambios**
+
+1. **Ver el historial de commits:**
+   ```bash
+   git log
+   ```
+
+   **Explicación:** Muestra una lista de todos los commits realizados, con detalles como el autor, la fecha y el mensaje de cada commit.
+
+2. **Ver el historial en formato compacto:**
+   ```bash
+   git log --oneline
+   ```
+
+   **Explicación:** Muestra una versión más compacta del historial, donde cada commit se muestra en una sola línea.
+
+---
+
+### **2.6. Trabajando con Ramas**
+
+Las ramas son una característica clave de Git, permitiendo desarrollar nuevas funcionalidades o corregir errores de manera aislada sin afectar la rama principal (generalmente llamada `main` o `master`).
+
+1. **Ver las ramas del repositorio:**
+   ```bash
+   git branch
+   ```
+
+   **Explicación:** Muestra todas las ramas locales del repositorio.
+
+2. **Crear una nueva rama:**
+   ```bash
+   git branch <nombre-de-la-rama>
+   ```
+
+   **Explicación:** Este comando crea una nueva rama a partir de la rama actual.
+
+3. **Cambiar a otra rama:**
+   ```bash
+   git checkout <nombre-de-la-rama>
+   ```
+
+   **Explicación:** Cambia de la rama actual a la especificada.
+
+4. **Crear y cambiar a una nueva rama:**
+   ```bash
+   git checkout -b <nombre-de-la-rama>
+   ```
+
+   **Explicación:** Crea una nueva rama y cambia a ella de inmediato.
+
+5. **Fusionar (merge) una rama a la rama principal:**
+   ```bash
+   git merge <nombre-de-la-rama>
+   ```
+
+   **Explicación:** Este comando fusiona los cambios de otra rama en la rama actual.
+
+6. **Eliminar una rama:**
+   ```bash
+   git branch -d <nombre-de-la-rama>
+   ```
+
+   **Explicación:** Elimina la rama especificada localmente. Si la rama no ha sido completamente fusionada, Git te advertirá.
+
+---
+
+### **2.7. Trabajando con Repositorios Remotos**
+
+1. **Ver los repositorios remotos configurados:**
+   ```bash
+   git remote -v
+   ```
+
+   **Explicación:** Este comando muestra los repositorios remotos configurados en el proyecto.
+
+2. **Agregar un repositorio remoto:**
+   ```bash
+   git remote add origin <url-del-repositorio>
+   ```
+
+   **Explicación:** Este comando asocia tu repositorio local con un repositorio remoto, lo que te permitirá enviar y recibir cambios de él.
+
+3. **Enviar cambios al repositorio remoto:**
+   ```bash
+   git push origin <nombre-de-la-rama>
+   ```
+
+   **Explicación:** Este comando envía tus commits locales al repositorio remoto en la rama especificada.
+
+4. **Obtener los cambios del repositorio remoto:**
+   ```bash
+   git pull origin <nombre-de-la-rama>
+   ```
+
+   **Explicación:** Este comando descarga los cambios del repositorio remoto y los fusiona con la rama actual.
+
+5. **Obtener los cambios sin fusionarlos (fetch):**
+   ```bash
+   git fetch origin
+   ```
+
+   **Explicación:** Este comando descarga los cambios del repositorio remoto pero no los fusiona automáticamente. Te permite ver los cambios antes de integrarlos.
+
+---
+
+### **2.8. Etiquetas (Tags)**
+
+Las etiquetas son una manera de marcar puntos específicos en el historial de commits, por ejemplo, para marcar una versión estable de tu proyecto.
+
+1. **Crear una etiqueta:**
+   ```bash
+   git tag <nombre-de-la-etiqueta>
+   ```
+
+   **Explicación:** Crea una nueva etiqueta en el commit actual.
+
+2. **Ver las etiquetas:**
+   ```bash
+   git tag
+   ```
+
+   **Explicación:** Muestra todas las etiquetas en el repositorio.
+
+3. **Enviar una etiqueta al repositorio remoto:**
+   ```bash
+   git push origin <nombre-de-la-etiqueta>
+   ```
+
+   **Explicación:** Envía una etiqueta específica al repositorio remoto.
+
+---
+
+## 3. **Git en el Trabajo Colaborativo**
+
+Git es una herramienta muy útil cuando se trabaja en equipo. Aquí algunos flujos de trabajo comunes:
+
+### **3.1. Flujo de Trabajo de Pull Requests (PRs)**
+
+En plataformas como GitHub y GitLab, los pull requests (o merge requests) se utilizan para integrar cambios de una rama de un colaborador en la rama principal.
+
+1. **Crear una nueva rama para tu característica:**
+   ```bash
+   git checkout -b feature/nueva-caracteristica
+   ```
+
+2. **Realiza tus cambios y confirma (commit):**
+   ```bash
+   git add .
+   git commit -m "Agregada nueva característica"
+   ```
+
+3. **Envía la rama al repositorio remoto:**
+   ```bash
+   git push origin feature/nueva-caracteristica
+   ```
+
+4. **Crear un Pull Request en la plataforma (GitHub, GitLab, etc.).**
+
+5. **Fusionar el PR después de que sea revisado y aprobado.**
+
+---
+
+## 4. **Comandos Avanzados**
+
+1. **Revertir un commit:**
+   ```bash
+   git revert <hash-del-commit>
+   ```
+
+   **Explicación:** Revertir un commit específico crea un nuevo commit que deshace los cambios de un commit anterior.
+
+2. **Rebase (rebase de una rama):**
+   ```bash
+   git rebase <rama-base
