@@ -1,6 +1,6 @@
 #break, continuos y pass
 
-#----- break -------
+# ------ break ---------
 
 """nombre = ""
 while True:# romper bucle con break
@@ -14,7 +14,7 @@ for i in telefono: #
         continue# encuentra dicho elemento continua
     print(i,end="")
 
-# ------- pass -------
+# ------- pass ----------
 for i in range(1,21):
     if i == 13:
         pass# actua como marcador de posicion
