@@ -1,1 +1,4 @@
 jugar con git es interesante
+gnu linux es interesante
+su distribucion debian 12 es genial
+es muy ligera
